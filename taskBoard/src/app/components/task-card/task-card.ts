@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {LucideAngularModule, Trash, MessageSquareDot} from 'lucide-angular';
+import {LucideAngularModule, Trash, MessageCircle } from 'lucide-angular';
 
 @Component({
   selector: 'app-task-card',
@@ -9,5 +9,5 @@ import {LucideAngularModule, Trash, MessageSquareDot} from 'lucide-angular';
 })
 export class TaskCard {
   readonly Trash = Trash;
-  readonly MessageSquareDot = MessageSquareDot;
+  readonly MessageCircle  = MessageCircle ;
 }

@@ -7,3 +7,19 @@
 html {
    font-family: "Archivo", sans-serif !important;
 }
+
+:root {
+   --rose-100: #FFF2F5;
+   --rose-200: #FBC2CC;
+   --rose-300: #F88393;
+   --rose-400: #F0627A;
+   --rose-500: #E255A1;
+   --rose-600: #D93B8A;
+   --rose-700: #C92F73;
+   --rose-800: #A8245E;
+   --rose-900: #691139;
+
+   --todo: #9AA3AF;
+   --in-progress: #6366F1;
+   --finished: #22C55E;
+}
