@@ -1,38 +1,48 @@
-<form class="rounded-xl overflow-hidden bg-white">
+<form class="rounded-xl overflow-hidden bg-white" [formGroup]="taskForm" (ngSubmit)="onFormSubmit()">
    <div class="flex gap-1 items-center p-4">
-      <lucide-icon [img]="CirclePlus" color="#D93B8A"></lucide-icon>
-      <h1 class="font-semibold text-lg">Create/Edit Task</h1>
-      <lucide-icon class="ml-auto cursor-pointer" [img]="X" color="#808080"></lucide-icon>
+      <lucide-icon [img]="_data.mode === 'create' ? CirclePlus : SquarePen" color="#D93B8A" class="mr-1"></lucide-icon>
+      <h1 class="font-semibold text-lg">{{ _data.mode === "create" ? "Create Task" : "Edit Task"}}</h1>
+      <button class="ml-auto cursor-pointer" (click)="closeModal()">
+         <lucide-icon [img]="X" color="#808080"></lucide-icon>
+      </button>
    </div>
    <div class="flex p-4 border-y border-lightgray flex-col gap-4">
       <div>
          <p class="font-semibold text-sm mb-2">Name</p>
-         <input type="text" placeholder="Describe what needs to be done" class="w-full border border-lightgray rounded-lg text-sm font-light text-[#89919F] p-3" />
-         <p class="font-medium text-sm text-red-500 ml-1">This field is required and must contain at least 10 characters.</p>
+         <input type="text" placeholder="Describe what needs to be done" class="w-full border border-lightgray rounded-lg text-sm font-light text-[#89919F] p-3" formControlName="name" />
+
+         @if(taskForm.get("name")?.touched && taskForm.get("name")?.invalid) {
+            <p class="font-medium text-sm text-red-500 ml-1">This field is required and must contain at least 5 characters.</p>
+         }
       </div>
       <div>
          <p class="font-semibold text-sm mb-2">Description</p>
          <input type="text" placeholder="Add more details about the task"
-            class="w-full border border-lightgray rounded-lg text-sm font-light text-[#89919F] p-3" />
-         <p class="font-medium text-sm text-red-500 ml-1">This field is required and must contain at least 10 characters.</p>
+            class="w-full border border-lightgray rounded-lg text-sm font-light text-[#89919F] p-3" formControlName="description" />
+         @if(taskForm.get("name")?.touched && taskForm.get("name")?.invalid) {
+            <p class="font-medium text-sm text-red-500 ml-1">This field is required and must contain at least 10 characters.</p>
+         }
       </div>
    </div>
    <div class="p-4 flex justify-end gap-2">
       <button
          class="py-3 px-4 bg-[#FAFAFA] rounded-xl text-sm font-semibold cursor-pointer
                active:translate-y-1 transition-transform duration-100"
-         type="button" 
+         type="button"
+         (click)="closeModal()"
       >
          Cancel
       </button>
       <button  
-         class="py-3 px-4 bg-rose-500 rounded-xl text-sm font-semibold cursor-pointer
+         class="py-3 px-4 bg-rose-500 rounded-xl text-sm font-medium cursor-pointer
                active:translate-y-1 transition-transform duration-100
                shadow-md shadow-rose-500/50 text-white
+               disabled:opacity-50 disabled:cursor-not-allowed
                "
          type="submit"
+         [disabled]="taskForm.invalid"
       >
-         Create/Edit Task
+         {{_data.mode === 'create' ? "Create" : "Save changes"}}
       </button>
    </div>
 </form>

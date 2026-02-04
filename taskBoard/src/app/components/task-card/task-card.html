@@ -12,7 +12,10 @@
          </button>
          @if (menuOpen) {
             <div class="absolute left-0 top-6 mt-2 shadow-md bg-gray-100 rounded-md flex flex-col z-50 text-gray-800">
-               <button class="flex text-sm items-center py-2 px-2 gap-2 border-b border-lightgray hover:bg-gray-200 rounded-t-md">
+               <button 
+                  class="flex text-sm items-center py-2 px-2 gap-2 border-b border-lightgray hover:bg-gray-200 rounded-t-md"
+                  (click)="openEditModal()"
+               >
                   <lucide-icon [img]="Pen" [size]="13"/>
                   <p>Edit</p>
                </button>
@@ -28,9 +31,12 @@
       This is the description of my new task.
    </p>
 
-   <div class="flex items-center gap-1 text-rose-400">
+   <button 
+      class="flex items-center gap-1 text-blue-500 bg-blue-100 rounded-md p-1 w-fit"
+      (click)="openCommentsModal()"
+   >
       <lucide-icon [img]="MessageCircle" [size]="14"/>
-      <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer" title="See comments ">Comments</p>
-   </div>
+      <p class="font-semibold text-xs cursor-pointer" title="See comments ">Comments</p>
+   </button>
 </div>
 

@@ -1,7 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { Header } from './components/header/header';
-import { LucideAngularModule, CircleCheckBig } from 'lucide-angular';
 import { MainContent } from './components/main-content/main-content';
 import { TaskFormModal } from './components/task-form-modal/task-form-modal';
 import { TaskCommentsModal } from './components/task-comments-modal/task-comments-modal';
@@ -19,5 +17,4 @@ import { TaskCommentsModal } from './components/task-comments-modal/task-comment
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('taskBoard');
 }

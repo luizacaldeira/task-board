@@ -7,11 +7,13 @@
          <h1 class="font-bold text-3xl">Welcome back, <br /> Luiza</h1>
          <h3 class="opacity-80 pt-1"> Don't forget to update your tasks</h3>
       </div>
-      <button class="
+      <button 
+         class="
             flex w-fit bg-rose-500 shadow-md shadow-rose-500/50 py-2 px-4 rounded-xl items-center
             text-white text-semibold gap-2 cursor-pointer 
             active:translate-y-1 transition-transform duration-100
          "
+         (click)="openCreateModal()"
       >
          <lucide-icon [img]="CirclePlus" class="my-icon" [size]=24></lucide-icon>
          <p>Create a task</p>
