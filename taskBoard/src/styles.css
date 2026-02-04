@@ -19,9 +19,19 @@ html {
    --rose-800: #A8245E;
    --rose-900: #691139;
 
-   --todo: #9AA3AF;
-   --in-progress: #6366F1;
-   --finished: #22C55E;
+   --todo: #D97706;
+   --in-progress: #1D4ED8;
+   --done: #15803D;
 
    --lightgray: #D1D5DD;
+}
+
+@layer utilities {
+   .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+   }
+   .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+   }
 }
