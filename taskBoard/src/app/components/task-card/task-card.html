@@ -1,16 +1,36 @@
 <div class="p-4 bg-[#FAFAFA] rounded-xl cursor-grab flex flex-col gap-3">
    <div class="flex gap-1 items-center">
-      <p class="font-medium">My new task</p>
-      <lucide-icon [img]="Trash" class="w-4 h-4 self-start ml-auto cursor-pointer" color="gray"/>
+      <p class="font-semibold">My new task</p>
+      <div class="relative self-start ml-auto">
+         <button 
+            class="p-1 rounded-full cursor-pointer hover:bg-gray-200" 
+            [class.bg-gray-200]="menuOpen"
+            [title]="menuOpen ? 'Close options' : 'See options'"
+            (click)="toggleMenu()"
+         >
+            <lucide-icon [img]="EllipsisVertical" [size]="16" color="gray" />
+         </button>
+         @if (menuOpen) {
+            <div class="absolute left-0 top-6 mt-2 shadow-md bg-gray-100 rounded-md flex flex-col z-50 text-gray-800">
+               <button class="flex text-sm items-center py-2 px-2 gap-2 border-b border-lightgray hover:bg-gray-200 rounded-t-md">
+                  <lucide-icon [img]="Pen" [size]="13"/>
+                  <p>Edit</p>
+               </button>
+               <button class="flex text-sm items-center py-2 px-2 gap-2 hover:bg-gray-200 rounded-b-md">
+                  <lucide-icon [img]="Trash" [size]="13"/>
+                  <p>Delete</p>
+               </button>
+            </div>
+         } 
+      </div>
    </div>
-   <p class="text-sm opacity-80">
+   <p class="text-sm opacity-70">
       This is the description of my new task.
    </p>
 
-   <div class="flex items-center gap-1 text-rose-600">
+   <div class="flex items-center gap-1 text-rose-400">
       <lucide-icon [img]="MessageCircle" [size]="14"/>
-      <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer">Comments</p>
-      <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer ml-auto">Edit</p>
+      <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer" title="See comments ">Comments</p>
    </div>
-
 </div>
+
