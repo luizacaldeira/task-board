@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { CircleCheckBig, Bell,  LucideAngularModule, LogOut  } from 'lucide-angular';
+import { Component, inject } from '@angular/core';
+import { CircleCheckBig, LucideAngularModule, PaintBucket } from 'lucide-angular';
+import { ThemeService } from '../../services/theme-service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,10 @@ import { CircleCheckBig, Bell,  LucideAngularModule, LogOut  } from 'lucide-angu
 })
 export class Header {
   readonly CircleCheckBig = CircleCheckBig;
-  readonly Bell = Bell;
-  readonly LogOut = LogOut;
+  readonly PaintBucket = PaintBucket 
+  private readonly _themeService = inject(ThemeService);
+
+  shuffleColors() {
+    this._themeService.shuffleTheme();
+  }
 }

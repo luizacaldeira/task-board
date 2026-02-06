@@ -9,22 +9,19 @@ html {
 }
 
 :root {
-   --rose-100: #FFF2F5;
-   --rose-200: #FBC2CC;
-   --rose-300: #F88393;
-   --rose-400: #F0627A;
-   --rose-500: #E255A1;
-   --rose-600: #D93B8A;
-   --rose-700: #C92F73;
-   --rose-800: #A8245E;
-   --rose-900: #691139;
-
    --todo: #D97706;
    --in-progress: #1D4ED8;
    --done: #15803D;
 
    --lightgray: #D1D5DD;
-}
+
+   --color-primary: 29 78 216;
+   --color-secondary: 147 197 253;
+   --color-accent: 2 6 23;
+   --color-light-base: 243 244 246;
+
+   --gradient-bg: linear-gradient(135deg, #F3F4F6 0%, #9cacfc 100%);
+   }
 
 @layer utilities {
    .scrollbar-hide {

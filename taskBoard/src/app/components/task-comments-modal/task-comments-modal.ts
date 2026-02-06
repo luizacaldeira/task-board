@@ -16,6 +16,7 @@ import { ITask } from '../../interfaces/task-interface';
 export class TaskCommentsModal {
   commentControl = new FormControl('', [Validators.required]);
   taskCommentChanged: boolean = false;
+  thisHour = new Date();
 
   @ViewChild('commentInput') commentInputRef! : ElementRef<HTMLInputElement>;
 
@@ -50,5 +51,11 @@ export class TaskCommentsModal {
     this.commentControl.markAsUntouched();
     this._task.comments = this._task.comments.filter((comment) => comment.id !== commentId);
     this.taskCommentChanged = true;
+  }
+
+  getHourAndMinutes(date: Date) {
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
   }
 }

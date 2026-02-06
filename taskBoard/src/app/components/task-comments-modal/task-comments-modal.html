@@ -1,6 +1,6 @@
 <div class="rounded-xl overflow-scroll bg-white max-h-[500] scrollbar-hide">
    <div class="flex p-4 gap-1 items-center">
-      <lucide-icon [img]="SquareStar" color="#D93B8A"></lucide-icon>
+      <lucide-icon [img]="SquareStar" color="rgb(var(--color-primary))"></lucide-icon>
       <h1 class="font-semibold text-lg">Comment Task</h1>
       <lucide-icon [img]="X" color="#808080" class="ml-auto cursor-pointer" (click)="onCloseModal()" />
    </div>
@@ -13,7 +13,7 @@
       <div class="bg-[lightgray]/30 p-5 rounded-xl flex flex-col gap-5">
          <div class="border-b border-lightgray flex gap-4 pb-2 items-center justify-between px-2">
             <p class="font-bold text-center">Comments</p>
-            <span class="text-xs font-bold text-rose-800 bg-rose-300 border border-rose-400 py-1 px-2 rounded-full">{{_task.comments.length}}</span>
+            <span class="text-xs font-bold text-primary bg-secondary/50 border border-primary/50 py-1 px-2 rounded-full">{{_task.comments.length}}</span>
          </div>
          <!-- Comments -->
          <div class="flex flex-col gap-5 overflow-scroll max-h-44 scrollbar-hide">
@@ -23,7 +23,7 @@
                      <p class="font-light text-sm text-gray-700 ">{{comment.description}}</p>
                   </div>
                   <div class="{{`flex items-end gap-4 ${ !last ?  'mb-3' : '' }`}}">
-                     <p class="font-normal text-xs text-gray-400">Commented 10 min ago</p>
+                     <p class="font-normal text-xs text-gray-400">Commented at: {{getHourAndMinutes(thisHour)}}</p>
                      <button  (click)="onRemoveComment(comment.id)" class="cursor-pointer">
                         <p class="font-normal text-xs text-red-400 underline underline-offset-1">Delete</p>
                      </button>
@@ -34,7 +34,7 @@
          <div class="flex items-start gap-2 mt-2">
             <div class="flex flex-col w-full">
                <input 
-                  class="rounded-xl border border-lightgray p-3 bg-white flex-1 text-sm font-light focus:outline-none focus:ring-1 focus:ring-rose-300" 
+                  class="rounded-xl border border-lightgray p-3 bg-white flex-1 text-sm font-light focus:outline-none focus:ring-1 focus:ring-primary/50" 
                   type="text"
                   placeholder="Type a comment..." 
                   [formControl]="commentControl"
@@ -44,9 +44,9 @@
                   <p class="font-medium text-sm text-red-500 ml-1">The field is required.</p>
                }
             </div>
-            <button class="{{`py-3 px-4 bg-rose-500 rounded-full text-sm font-semibold cursor-pointer
+            <button class="{{`py-3 px-4 bg-primary rounded-full text-sm font-semibold cursor-pointer
                            active:translate-y-1 transition-transform duration-100
-                           shadow-md shadow-rose-500/50 text-white ${ commentControl.invalid ? 'opacity-50 cursor-not-allowed' : '' }`}}"
+                           shadow-md shadow-primary/50 text-white ${ commentControl.invalid ? 'opacity-50 cursor-not-allowed' : '' }`}}"
                            title="Send Comment"
                            [disabled] = "commentControl.invalid"
                            (click)="onAddComment()"

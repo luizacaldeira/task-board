@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { LucideAngularModule, CirclePlus } from 'lucide-angular';
 import { ModalControllerService } from '../../services/modal-controller-service';
 import { TaskService } from '../../services/task-service';
+import { ThemeService } from '../../services/theme-service';
 
 @Component({
   selector: 'app-welcome-section',
@@ -14,6 +15,7 @@ export class WelcomeSection {
 
   private readonly _modalControllerService = inject(ModalControllerService);
   private readonly _taskService = inject(TaskService);
+  readonly _themeService = inject(ThemeService);
 
   openCreateModal (){
     const dialogRef = this._modalControllerService.openNewTaskModal();

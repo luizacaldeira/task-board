@@ -1,15 +1,15 @@
-<div class="rounded-2xl px-8 py-4  bg-rose-100/40 flex flex-col gap-7 sm:flex-row-reverse sm:justify-between sm:items-center">
-   <div>
-      <img src="man-coding.png" class="h-64"/>
+<div class="rounded-2xl px-8 py-5 mt-10 flex flex-col gap-7 bg-primary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center sm:relative sm:items-start sm:py-11">
+   <div class="flex items-end sm:absolute sm:right-12 sm:bottom-0">
+      <img [src]="_themeService.currentTheme().welcomeImage" alt="Welcome illustration" class="h-40 sm:h-[215px] object-contain" />
    </div>
    <div class="flex flex-col gap-4 ">
       <div>
-         <h1 class="font-bold text-3xl">Welcome back, <br /> Luiza</h1>
-         <h3 class="opacity-80 pt-1"> Don't forget to update your tasks</h3>
+         <h1 class="font-bold text-3xl text-accent">Welcome back, Luiza!</h1>
+         <h3 class="opacity-80 pt-1 text-accent"> Don't forget to update your tasks ;)</h3>
       </div>
       <button 
          class="
-            flex w-fit bg-rose-500 shadow-md shadow-rose-500/50 py-2 px-4 rounded-xl items-center
+            flex w-fit bg-primary shadow-md shadow-primary/50 py-2 px-4 rounded-xl items-center
             text-white text-semibold gap-2 cursor-pointer 
             active:translate-y-1 transition-transform duration-100
          "

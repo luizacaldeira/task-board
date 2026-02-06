@@ -3,10 +3,10 @@
 @let doneTasks = (this._taskService.doneTasks | async ) ?? [];
 @let noTasks = todoTasks.length === 0 && inProgressTasks.length === 0 && doneTasks.length === 0;
 
-<div class="p-3 mb-6 flex overflow-auto scrollbar-hide">
+<div class="mb-6 flex overflow-auto scrollbar-hide gap-3">
    <!-- To do -->
    <div 
-      class="flex-1 py-3 px-6 min-w-60 flex flex-col"
+      class="flex-1 py-3 px-6 min-w-60 flex flex-col bg-white/25 rounded-lg"
       cdkDropList
       #todoListCdkDropList="cdkDropList"
       [cdkDropListData]="todoTasks"
@@ -14,7 +14,7 @@
       (cdkDropListDropped)="onCardDrop($event)"
       id="to-do-column"
    >
-      <div class="py-2 border-b border-lightgray flex items-center gap-2 mb-2 ml-1">
+      <div class="py-2 flex items-center gap-2 mb-2 ml-1">
          <h1 class="font-bold"> To do</h1>
          <span class="text-xs font-semibold text-white bg-[var(--todo)] py-1 px-2 rounded-xl">{{todoTasks.length}}</span>
       </div>
@@ -26,7 +26,7 @@
    </div>
    <!-- In progress -->
    <div 
-      class=" flex-1 py-3 px-6 min-w-60 flex flex-col"
+      class=" flex-1 py-3 px-6 min-w-60 flex flex-col bg-white/25 rounded-lg"
       cdkDropList
       #inProgressListCdkDropList="cdkDropList"
       [cdkDropListData]="inProgressTasks"
@@ -34,7 +34,7 @@
       (cdkDropListDropped)="onCardDrop($event)"
       id="in-progress-column"
    >
-      <div class="py-2 border-b border-lightgray flex items-center gap-2 mb-2  ml-1">
+      <div class="py-2 flex items-center gap-2 mb-2  ml-1">
          <h1 class="font-bold">In progress</h1>
          <span class="text-xs font-semibold text-white bg-[var(--in-progress)] py-1 px-2 rounded-xl">{{inProgressTasks.length}}</span>
       </div>
@@ -46,7 +46,7 @@
    </div>
    <!-- Done -->
    <div 
-      class=" flex-1 py-3 px-6 min-w-60 flex flex-col"
+      class=" flex-1 py-3 px-6 min-w-60 flex flex-col bg-white/25 rounded-lg"
       cdkDropList
       #doneListCdkDropList="cdkDropList"
       [cdkDropListData]="doneTasks"
@@ -54,7 +54,7 @@
       (cdkDropListDropped)="onCardDrop($event)"
       id="done-column"
    >
-      <div class="py-2 border-b border-lightgray flex items-center gap-2 mb-2 ml-1">
+      <div class="py-2 flex items-center gap-2 mb-2 ml-1">
          <h1 class="font-bold">Done</h1>
          <span class="text-xs font-semibold text-white bg-[var(--done)] py-1 px-2 rounded-xl">{{doneTasks.length}}</span>
       </div>
