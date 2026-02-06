@@ -1,6 +1,8 @@
 <div class="p-4 bg-[#FAFAFA] rounded-xl cursor-grab flex flex-col gap-3">
    <div class="flex gap-1 items-center">
-      <p class="font-semibold">My new task</p>
+      <p class="font-semibold cursor-default" title="{{ task.name }}">
+         {{ task.name.length < 13 ? task.name : (task.name | slice:0:13) + '...'}}
+      </p>
       <div class="relative self-start ml-auto">
          <button 
             class="p-1 rounded-full cursor-pointer hover:bg-gray-200" 
@@ -19,7 +21,7 @@
                   <lucide-icon [img]="Pen" [size]="13"/>
                   <p>Edit</p>
                </button>
-               <button class="flex text-sm items-center py-2 px-2 gap-2 hover:bg-gray-200 rounded-b-md">
+               <button (click)="deleteTask()" class="flex text-sm items-center py-2 px-2 gap-2 hover:bg-gray-200 rounded-b-md">
                   <lucide-icon [img]="Trash" [size]="13"/>
                   <p>Delete</p>
                </button>
@@ -27,8 +29,8 @@
          } 
       </div>
    </div>
-   <p class="text-sm opacity-70">
-      This is the description of my new task.
+   <p class="text-sm opacity-70 cursor-default" title="{{ task.description }}">
+      {{ task.description.length < 20 ? task.description : (task.description | slice:0:20) + '...' }}
    </p>
 
    <button 
@@ -36,7 +38,7 @@
       (click)="openCommentsModal()"
    >
       <lucide-icon [img]="MessageCircle" [size]="14"/>
-      <p class="font-semibold text-xs cursor-pointer" title="See comments ">Comments</p>
+      <p class="font-semibold text-xs cursor-pointer" title="See comments ">{{task.comments.length}} Comments</p>
    </button>
 </div>
 
