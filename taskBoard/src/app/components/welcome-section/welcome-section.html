@@ -1,9 +1,9 @@
-<div class="rounded-2xl px-8 py-10 mt-20 flex flex-col gap-7 items-center justify-center w-full sm:relative sm:items-start sm:py-18 z-10">
-   <div class="flex flex-col gap-4 text-center justify-center items-center w-full">
+<div class="rounded-2xl px-8 py-10 mt-20 2xl:mt-24 3xl:mt-28 flex flex-col gap-7 2xl:gap-9 items-center justify-center w-full sm:relative sm:items-start sm:py-18 z-10">
+   <div class="flex flex-col gap-4 2xl:gap-6 text-center justify-center items-center w-full">
       <div>
          <h1 
             class="
-               font-medium text-4xl tracking-tight text-primary
+               font-medium text-4xl 2xl:text-5xl 3xl:text-6xl tracking-tight text-primary
                px-6 py-1
                rounded-2xl
                text-shadow-sm
@@ -11,26 +11,26 @@
          >
             Ready to get things done?
          </h1>
-         <h3 class="opacity-80 pt-1 text-accent">Keep your work organized and on track.</h3>
+         <h3 class="opacity-80 pt-1 2xl:pt-2 text-accent 2xl:text-lg 3xl:text-xl">Keep your work organized and on track.</h3>
       </div>
       @if(_themeService.currentTheme().name === 'rose') {
          <div class="sparkle-wrapper hue-rotate-60 saturate-80">
-            <img src="/sparkle-icon.webp" class="h-16 sparkle-holo" />
+            <img src="/sparkle-icon.webp" class="h-16 2xl:h-20 3xl:h-24 sparkle-holo" />
          </div>
       }
       @else if (_themeService.currentTheme().name === 'seagrass') {
          <div class="sparkle-wrapper -hue-rotate-90">
-            <img src="/sparkle-icon.webp" class="h-16 sparkle-holo" />
+            <img src="/sparkle-icon.webp" class="h-16 2xl:h-20 3xl:h-24 sparkle-holo" />
          </div>
       }
       @else if (_themeService.currentTheme().name === 'indigo') {
          <div class="sparkle-wrapper -hue-rotate-60">
-            <img src="/sparkle-icon.webp" class="h-16 sparkle-holo" />
+            <img src="/sparkle-icon.webp" class="h-16 2xl:h-20 3xl:h-24 sparkle-holo" />
          </div>
       }
       @else{
          <div class="sparkle-wrapper">
-            <img src="/sparkle-icon.webp" class="h-16 sparkle-holo" />
+            <img src="/sparkle-icon.webp" class="h-16 2xl:h-20 3xl:h-24 sparkle-holo" />
          </div>
       }
    </div>

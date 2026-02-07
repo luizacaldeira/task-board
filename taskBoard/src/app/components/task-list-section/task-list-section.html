@@ -3,10 +3,10 @@
 @let doneTasks = (this._taskService.doneTasks | async ) ?? [];
 @let noTasks = todoTasks.length === 0 && inProgressTasks.length === 0 && doneTasks.length === 0;
 
-<div class="flex overflow-auto scrollbar-hide gap-3 mb-20">
+<div class="flex overflow-auto scrollbar-hide gap-3 2xl:gap-5 3xl:gap-6 mb-20">
    <!-- To do -->
    <div 
-      class="flex-1 py-3 px-6 min-w-60 flex flex-col border-t-4 border-todo/70 bg-white/30 bg-clip-padding backdrop-filter backdrop-blur-lg rounded-lg"
+      class="flex-1 py-3 px-6 2xl:py-4 2xl:px-8 min-w-60 2xl:min-w-72 flex flex-col border-t-4 border-todo/70 bg-white/30 bg-clip-padding backdrop-filter backdrop-blur-lg rounded-lg 2xl:rounded-xl"
       cdkDropList
       #todoListCdkDropList="cdkDropList"
       [cdkDropListData]="todoTasks"
@@ -15,10 +15,10 @@
       id="to-do-column"
    >
       <div class="py-2 flex items-center gap-2 mb-2 ml-1">
-         <h1 class="font-bold"> To do</h1>
-         <span class="text-xs font-semibold text-white bg-todo py-1 px-2 rounded-xl">{{todoTasks.length}}</span>
+         <h1 class="font-bold 2xl:text-lg"> To do</h1>
+         <span class="text-xs 2xl:text-sm font-semibold text-white bg-todo py-1 px-2 rounded-xl">{{todoTasks.length}}</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 2xl:gap-5">
          @for(todoTask of todoTasks; track todoTask.id ){
             <app-task-card cdkDrag [cdkDragData]="todoTask" [task]="todoTask"/>
          }
@@ -26,7 +26,7 @@
    </div>
    <!-- In progress -->
    <div 
-      class=" flex-1 py-3 px-6 min-w-60 flex flex-col border-t-4 border-inprogress/70 bg-white/30 bg-clip-padding backdrop-filter backdrop-blur-lg rounded-lg"
+      class="flex-1 py-3 px-6 2xl:py-4 2xl:px-8 min-w-60 2xl:min-w-72 flex flex-col border-t-4 border-inprogress/70 bg-white/30 bg-clip-padding backdrop-filter backdrop-blur-lg rounded-lg 2xl:rounded-xl"
       cdkDropList
       #inProgressListCdkDropList="cdkDropList"
       [cdkDropListData]="inProgressTasks"
@@ -34,11 +34,11 @@
       (cdkDropListDropped)="onCardDrop($event)"
       id="in-progress-column"
    >
-      <div class="py-2 flex items-center gap-2 mb-2  ml-1">
-         <h1 class="font-bold">In progress</h1>
-         <span class="text-xs font-semibold text-white bg-inprogress/70 py-1 px-2 rounded-xl">{{inProgressTasks.length}}</span>
+      <div class="py-2 flex items-center gap-2 mb-2 ml-1">
+         <h1 class="font-bold 2xl:text-lg">In progress</h1>
+         <span class="text-xs 2xl:text-sm font-semibold text-white bg-inprogress/70 py-1 px-2 rounded-xl">{{inProgressTasks.length}}</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 2xl:gap-5">
          @for(inProgressTask of inProgressTasks; track inProgressTask.id){
             <app-task-card cdkDrag [cdkDragData]="inProgressTask" [task]="inProgressTask"/>
          }
@@ -46,7 +46,7 @@
    </div>
    <!-- Done -->
    <div 
-      class=" flex-1 py-3 px-6 min-w-60 flex flex-col border-t-4 border-done bg-white/30 bg-clip-padding backdrop-filter backdrop-blur-lg rounded-lg"
+      class="flex-1 py-3 px-6 2xl:py-4 2xl:px-8 min-w-60 2xl:min-w-72 flex flex-col border-t-4 border-done bg-white/30 bg-clip-padding backdrop-filter backdrop-blur-lg rounded-lg 2xl:rounded-xl"
       cdkDropList
       #doneListCdkDropList="cdkDropList"
       [cdkDropListData]="doneTasks"
@@ -55,10 +55,10 @@
       id="done-column"
    >
       <div class="py-2 flex items-center gap-2 mb-2 ml-1">
-         <h1 class="font-bold">Done</h1>
-         <span class="text-xs font-semibold text-white bg-done py-1 px-2 rounded-xl">{{doneTasks.length}}</span>
+         <h1 class="font-bold 2xl:text-lg">Done</h1>
+         <span class="text-xs 2xl:text-sm font-semibold text-white bg-done py-1 px-2 rounded-xl">{{doneTasks.length}}</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 2xl:gap-5">
          @for(doneTask of doneTasks; track doneTask.id ){
             <app-task-card cdkDrag [cdkDragData]="doneTask" [task]="doneTask"/>
          }

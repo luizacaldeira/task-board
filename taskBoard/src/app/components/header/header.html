@@ -2,11 +2,10 @@
          bg-white/25 backdrop-blur-xl
          border-b border-white/20
          shadow-sm shadow-black/5">
-   <div class="flex items-center justify-between px-6 h-16">
+   <div class="flex items-center justify-between px-6 2xl:px-10 h-16 2xl:h-20">
       <div class="flex items-center gap-2">
          <lucide-icon [img]="CircleCheckBig" class="my-icon" color="rgb(var(--color-primary))"></lucide-icon>
-
-         <h1 class="font-semibold text-base tracking-wide text-accent">
+         <h1 class="font-semibold text-base 2xl:text-xl tracking-wide text-accent">
             TaskBoard
          </h1>
       </div>
@@ -17,6 +16,7 @@
                text-primary text-sm font-medium
                shadow-sm shadow-primary/20
                transition-all duration-200
+               2xl:text-lg
                hover:bg-primary/5 hover:shadow-md hover:shadow-primary/40
                hover:scale-[1.03]
                active:scale-[0.97]" (click)="shuffleColors()">

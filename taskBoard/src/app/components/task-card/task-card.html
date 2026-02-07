@@ -1,7 +1,7 @@
-<div class="p-4 bg-[#FAFAFA]/70 rounded-xl cursor-grab flex flex-col gap-3">
+<div class="p-4 2xl:p-5 3xl:p-6 bg-[#FAFAFA]/70 rounded-xl cursor-grab flex flex-col gap-3 2xl:gap-4">
    <div class="flex gap-1 items-center">
-      <p class="font-semibold" title="{{ task.name }}">
-         {{ task.name.length < 13 ? task.name : (task.name | slice:0:13) + '...'}}
+      <p class="font-semibold 2xl:text-lg truncate max-w-[120px] 2xl:max-w-[180px] 3xl:max-w-[220px]" title="{{ task.name }}">
+         {{ task.name }}
       </p>
       <div class="relative self-start ml-auto">
          <button 
@@ -29,8 +29,8 @@
          } 
       </div>
    </div>
-   <p class="text-sm opacity-70" title="{{ task.description }}">
-      {{ task.description.length < 18 ? task.description : (task.description | slice:0:18) + '...' }}
+   <p class="text-sm 2xl:text-base opacity-70 truncate max-w-[150px] 2xl:max-w-[200px] 3xl:max-w-[260px]" title="{{ task.description }}">
+      {{ task.description }}
    </p>
 
    <button 
