@@ -20,7 +20,7 @@ html {
    --color-accent: 6 12 34;
    --color-light-base: 243 244 246;
 
-   --gradient-bg: url("/teal-blue.png");
+   --gradient-bg: url("/teal-blue.webp");
    }
 
 @layer utilities {

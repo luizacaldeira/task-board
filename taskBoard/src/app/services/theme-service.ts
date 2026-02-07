@@ -12,7 +12,7 @@ export class ThemeService {
       secondary: '191 219 254', 
       accent: '15 23 42',         
       lightBase: '239 246 255',  
-      bgImage: "/teal-blue.png"
+      bgImage: "/teal-blue.webp"
       },
       {
       name: 'rose',
@@ -20,7 +20,7 @@ export class ThemeService {
       secondary: '253 164 175',   
       accent: '74 4 25',        
       lightBase: '255 241 242',   
-      bgImage: "/orange-pink.png"
+      bgImage: "/orange-pink.webp"
       },
       {
       name: 'seagrass',
@@ -28,7 +28,7 @@ export class ThemeService {
       secondary: '153 246 228', 
       accent: '4 47 46',          
       lightBase: '236 253 245',  
-      bgImage: "/teal.png"
+      bgImage: "/teal.webp"
       },
       {
       name: 'lilac',
@@ -36,7 +36,7 @@ export class ThemeService {
       secondary: '196 181 253',   
       accent: '46 16 101',        
       lightBase: '245 243 255',   
-      bgImage: "/lilac.png"
+      bgImage: "/lilac.webp"
       }
    ];
    
