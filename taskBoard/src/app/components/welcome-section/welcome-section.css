@@ -1,0 +1,37 @@
+.sparkle-holo {
+   filter:
+      drop-shadow(0 0 12px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 28px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 46px rgba(236, 72, 153, 0.8));
+
+   transition: transform 0.7s cubic-bezier(.4, 0, .2, 1),
+      filter 0.4s ease;
+
+   transform-style: preserve-3d;
+   will-change: transform;
+   animation: sparklePulse 3s ease-in-out infinite;
+}
+
+.sparkle-holo:hover {
+   transform: rotateY(180deg) scale(1.06);
+}
+
+@keyframes sparklePulse {
+
+   0%,
+   100% {
+      filter:
+         drop-shadow(0 0 10px rgba(139, 92, 246, 0.50)) drop-shadow(0 0 22px rgba(59, 130, 246, 0.50)) drop-shadow(0 0 36px rgba(236, 72, 153, 0.18));
+   }
+
+   50% {
+      filter:
+         drop-shadow(0 0 16px rgba(139, 92, 246, 0.60)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.60)) drop-shadow(0 0 58px rgba(236, 72, 153, 0.35));
+   }
+}
+
+.sparkle-wrapper {
+   perspective: 900px;
+}
+
+.hue-rotate-60 {
+   --hue: 60deg;
+}

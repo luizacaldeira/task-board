@@ -1,22 +1,37 @@
-<div class="rounded-2xl px-8 py-5 mt-10 flex flex-col gap-7 bg-primary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 items-center sm:relative sm:items-start sm:py-11">
-   <div class="flex items-end sm:absolute sm:right-12 sm:bottom-0">
-      <img [src]="_themeService.currentTheme().welcomeImage" alt="Welcome illustration" class="h-40 sm:h-[215px] object-contain" />
-   </div>
-   <div class="flex flex-col gap-4 ">
+<div class="rounded-2xl px-8 py-10 mt-20 flex flex-col gap-7 items-center justify-center w-full sm:relative sm:items-start sm:py-18 z-10">
+   <div class="flex flex-col gap-4 text-center justify-center items-center w-full">
       <div>
-         <h1 class="font-bold text-3xl text-accent">Welcome back, Luiza!</h1>
-         <h3 class="opacity-80 pt-1 text-accent"> Don't forget to update your tasks ;)</h3>
+         <h1 
+            class="
+               font-medium text-4xl tracking-tight text-primary
+               px-6 py-1
+               rounded-2xl
+               text-shadow-sm
+               inline-block"
+         >
+            Ready to get things done?
+         </h1>
+         <h3 class="opacity-80 pt-1 text-accent">Keep your work organized and on track.</h3>
       </div>
-      <button 
-         class="
-            flex w-fit bg-primary shadow-md shadow-primary/50 py-2 px-4 rounded-xl items-center
-            text-white text-semibold gap-2 cursor-pointer 
-            active:translate-y-1 transition-transform duration-100
-         "
-         (click)="openCreateModal()"
-      >
-         <lucide-icon [img]="CirclePlus" class="my-icon" [size]=24></lucide-icon>
-         <p>Create a task</p>
-      </button>
+      @if(_themeService.currentTheme().name === 'rose') {
+         <div class="sparkle-wrapper hue-rotate-60 saturate-80">
+            <img src="/sparkle-icon.png" class="h-16 sparkle-holo" />
+         </div>
+      }
+      @else if (_themeService.currentTheme().name === 'seagrass') {
+         <div class="sparkle-wrapper -hue-rotate-90">
+            <img src="/sparkle-icon.png" class="h-16 sparkle-holo" />
+         </div>
+      }
+      @else if (_themeService.currentTheme().name === 'indigo') {
+         <div class="sparkle-wrapper -hue-rotate-60">
+            <img src="/sparkle-icon.png" class="h-16 sparkle-holo" />
+         </div>
+      }
+      @else{
+         <div class="sparkle-wrapper">
+            <img src="/sparkle-icon.png" class="h-16 sparkle-holo" />
+         </div>
+      }
    </div>
 </div>
