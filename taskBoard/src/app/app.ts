@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Header } from './components/header/header';
 import { MainContent } from './components/main-content/main-content';
+import { ThemeService } from './services/theme-service';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,6 @@ import { MainContent } from './components/main-content/main-content';
   styleUrl: './app.css'
 })
 export class App {
+  readonly _themeService = inject(ThemeService);
+
 }
