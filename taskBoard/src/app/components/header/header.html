@@ -1,16 +1,29 @@
-<header class="bg-primary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border-b border-secondary border-opacity-20 py-1 px-5 w-full flex">
-   <div class="flex items-center gap-2 p-3">
-      <lucide-icon [img]="CircleCheckBig" class="my-icon" color="rgb(var(--color-primary))"></lucide-icon>
-      <h1 class="font-bold text-xl">TaskBoard</h1>
+<header class="fixed top-0 z-50 w-full
+         bg-white/25 backdrop-blur-xl
+         border-b border-white/20
+         shadow-sm shadow-black/5">
+   <div class="flex items-center justify-between px-6 h-16">
+      <div class="flex items-center gap-2">
+         <lucide-icon [img]="CircleCheckBig" class="my-icon" color="rgb(var(--color-primary))"></lucide-icon>
+
+         <h1 class="font-semibold text-base tracking-wide text-accent">
+            TaskBoard
+         </h1>
+      </div>
+      <nav class="flex items-center gap-4">
+         <button class="group flex items-center gap-2 px-4 py-2 rounded-full
+               border border-primary/30
+               bg-white/60 backdrop-blur-md
+               text-primary text-sm font-medium
+               shadow-sm shadow-primary/20
+               transition-all duration-200
+               hover:bg-primary/5 hover:shadow-md hover:shadow-primary/40
+               hover:scale-[1.03]
+               active:scale-[0.97]" (click)="shuffleColors()">
+            <lucide-icon [img]="PaintBucket" [size]="16"
+               class="transition-transform duration-200 group-hover:rotate-12"></lucide-icon>
+            <span>Color Shuffle</span>
+         </button>
+      </nav>
    </div>
-   <nav class="p-3 ml-auto flex gap-6">
-      <button 
-         class="flex items-center bg-white/50 border border-primary border-opacity-35 text-primary px-3 py-2 rounded-full gap-1
-         active:translate-y-1 transition-transform duration-100"
-         (click)="shuffleColors()"
-      >
-         <lucide-icon [img]="PaintBucket" [size]="16"></lucide-icon>
-         <p class="text-sm ">Color Shuffle</p>
-      </button>
-   </nav>
 </header>
