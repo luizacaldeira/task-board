@@ -1,6 +1,6 @@
 <div class="p-4 2xl:p-5 3xl:p-6 bg-[#FAFAFA]/70 rounded-xl cursor-grab flex flex-col gap-3 2xl:gap-4">
    <div class="flex gap-1 items-center">
-      <p class="font-semibold 2xl:text-lg truncate max-w-[120px] 2xl:max-w-[180px] 3xl:max-w-[220px]" title="{{ task.name }}">
+      <p class="font-semibold 2xl:text-lg truncate max-w-[180px] lg:max-w-[220px] 2xl:max-w-[280px] 3xl:max-w-[320px]" title="{{ task.name }}">
          {{ task.name }}
       </p>
       <div class="relative self-start ml-auto">
@@ -13,7 +13,7 @@
             <lucide-icon [img]="EllipsisVertical" [size]="16" color="gray" />
          </button>
          @if (menuOpen) {
-            <div class="absolute left-0 top-6 mt-2 shadow-md bg-gray-100 rounded-md flex flex-col z-50 text-gray-800">
+            <div class="absolute right-0 top-6 mt-2 shadow-md bg-gray-100 rounded-md flex flex-col z-50 text-gray-800">
                <button 
                   class="flex text-sm items-center py-2 px-2 gap-2 border-b border-lightgray hover:bg-gray-200 rounded-t-md"
                   (click)="openEditModal()"
@@ -29,7 +29,7 @@
          } 
       </div>
    </div>
-   <p class="text-sm 2xl:text-base opacity-70 truncate max-w-[150px] 2xl:max-w-[200px] 3xl:max-w-[260px]" title="{{ task.description }}">
+   <p class="text-sm 2xl:text-base opacity-70 truncate max-w-[200px] lg:max-w-[260px] 2xl:max-w-[320px] 3xl:max-w-[380px]" title="{{ task.description }}">
       {{ task.description }}
    </p>
 
