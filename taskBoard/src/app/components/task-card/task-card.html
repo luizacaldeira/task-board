@@ -1,7 +1,7 @@
-<div class="p-4 bg-[#FAFAFA]/90 rounded-xl cursor-grab flex flex-col gap-3">
+<div class="p-4 bg-[#FAFAFA]/70 rounded-xl cursor-grab flex flex-col gap-3">
    <div class="flex gap-1 items-center">
       <p class="font-semibold" title="{{ task.name }}">
-         {{ task.name.length < 20 ? task.name : (task.name | slice:0:20) + '...'}}
+         {{ task.name.length < 13 ? task.name : (task.name | slice:0:13) + '...'}}
       </p>
       <div class="relative self-start ml-auto">
          <button 
@@ -30,7 +30,7 @@
       </div>
    </div>
    <p class="text-sm opacity-70" title="{{ task.description }}">
-      {{ task.description.length < 25 ? task.description : (task.description | slice:0:25) + '...' }}
+      {{ task.description.length < 18 ? task.description : (task.description | slice:0:18) + '...' }}
    </p>
 
    <button 
