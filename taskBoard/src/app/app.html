@@ -1,4 +1,5 @@
-<div class="mx-auto max-w-8xl min-h-screen" style="background: var(--gradient-bg) ">
+<div class="mx-auto max-w-8xl min-h-screen" [style.background-image]="'url(' + _themeService.currentTheme().bgImage + ')'"
+style="background-size: cover; background-position: center; background-color: rgba(255, 255, 255, 0.5); background-blend-mode: lighten;">
   <app-header/>
   <app-main-content/>
 </div>
