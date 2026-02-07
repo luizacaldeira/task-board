@@ -7,38 +7,39 @@ import { ITheme } from '../interfaces/theme-interface';
 export class ThemeService {
    private readonly themes: ITheme[] = [
       {
-         name: 'indigo',
-         primary: '29 78 216',
-         secondary: '147 197 253',
-         accent: '2 6 23',
-         lightBase: '243 244 246',
-         welcomeImage: "blue-setup.png"
+      name: 'indigo',
+      primary: '59 130 246',   
+      secondary: '191 219 254', 
+      accent: '15 23 42',         
+      lightBase: '239 246 255',  
+      bgImage: "/teal-blue.png"
       },
       {
-         name: 'rose',
-         primary: '225 29 72',
-         secondary: '253 164 175',
-         accent: '76 5 25',
-         lightBase: '255 250 250',
-         welcomeImage: "pink-setup.png"
+      name: 'rose',
+      primary: '244 63 94',     
+      secondary: '253 164 175',   
+      accent: '74 4 25',        
+      lightBase: '255 241 242',   
+      bgImage: "/orange-pink.png"
       },
       {
-         name: 'seagrass',
-         primary: '16 185 129',
-         secondary: '165 248 238',
-         accent: '2 44 34',
-         lightBase: '240 253 250',
-         welcomeImage: "green-setup.png"
+      name: 'seagrass',
+      primary: '16 185 129',     
+      secondary: '153 246 228', 
+      accent: '4 47 46',          
+      lightBase: '236 253 245',  
+      bgImage: "/teal.png"
       },
       {
-         name: 'orange',
-         primary: '249 115 22',
-         secondary: '253 186 116',
-         accent: '67 20 7',
-         lightBase: '255 250 240',
-         welcomeImage: "orange-setup.png"
+      name: 'lilac',
+      primary: '139 92 246',      
+      secondary: '196 181 253',   
+      accent: '46 16 101',        
+      lightBase: '245 243 255',   
+      bgImage: "/lilac.png"
       }
    ];
+   
 
    currentTheme = signal<ITheme>(this.themes[0]);
 
@@ -56,6 +57,6 @@ export class ThemeService {
       root.style.setProperty('--color-primary', theme.primary);
       root.style.setProperty('--color-secondary', theme.secondary);
       root.style.setProperty('--color-accent', theme.accent);
-      root.style.setProperty('--gradient-bg', `linear-gradient(135deg, rgb(${theme.lightBase}) 0%, rgb(${theme.secondary}) 100%)`);
+      root.style.setProperty('--gradient-bg', `url(${theme.bgImage})`);
 }
 }

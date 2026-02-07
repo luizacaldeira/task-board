@@ -5,4 +5,5 @@ export interface ITheme {
    accent: string;
    lightBase: string;
    welcomeImage?: string;
+   bgImage?: string;
 }
